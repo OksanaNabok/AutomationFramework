@@ -1,10 +1,10 @@
 USE master;
-Create LOGIN NewTestUser WITH PASSWORD = 'yourStrongPassword1!';
+CREATE LOGIN RobotTestUser1 WITH PASSWORD = 'testPass';
 GO
 
 
-USE AdventureWorksDW2012;
-CREATE USER RFTestUser FOR LOGIN NEWTestUser;
+USE AdventureWorks2012;
+CREATE USER RobotTestUser1 FOR LOGIN RobotTestUser;
 GO
 
-EXEC sp_addrolemember N'db_datareader', N'RFTestUser';
+EXEC sp_addrolemember N'db_datareader', N'RobotTestUser1';

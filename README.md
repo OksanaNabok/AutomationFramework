@@ -1,5 +1,19 @@
 # AdventureWorks Robot Framework Tests
 
+## Task
+1. Create 2 DIFFERENT test cases for data checks on "AdventureWorks2012" database (3 different tables) and document them (name, steps, expected results).
+Example TC#1 count for column; TC#2 average function for column, TC#3 max\min values, TC#4 values in range of list ...... etc.
+Tables to use:
+-[Person].[Address]
+-[Production].[Document]
+-[Production].[UnitMeasure]
+As a result you should have 6 different test cases for 3 different tables (2 per table).
+2. Create user in MSSQL to connect from RF
+3. Create a project for running RF tests.
+4. Automate test cases from step 1 so that they can connect to MS SQL DB from SQL Module on your localhost.
+5. Store a test report.
+
+
 ## Overview
 This project contains automated test cases for verifying data integrity in the AdventureWorksDW2012 database using Robot Framework and SQL queries.
 Test cases locates in folder `tests`
@@ -13,18 +27,8 @@ Test cases locates in folder `tests`
 
 ## Setup
 1. Configure the `resources/database_config.robot` file with your database connection details.
-2. Create the MSSQL login using the script in above or running file `resources/SQLQuery_createUser.sql`:
-"
-USE master;
-Create LOGIN NewTestUser WITH PASSWORD = 'yourStrongPassword1!';
-GO
+2. Create the MSSQL login using the script in `resources/SQLQuery_createUser.sql`:
 
-USE AdventureWorks2012;
-CREATE USER RFTestUser FOR LOGIN NEWTestUser;
-GO
-
-EXEC sp_addrolemember N'db_datareader', N'RFTestUser';
-"
 
 ## Running Tests
 Run the tests with:

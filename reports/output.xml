@@ -1,44 +1,416 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.0 on win32)" generated="2025-03-13T11:37:17.512650" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.0 on win32)" generated="2025-03-13T17:22:07.555300" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="C:\Users\Оксана\PycharmProjects\robotTask\tests">
 <suite id="s1-s1" name="Example" source="C:\Users\Оксана\PycharmProjects\robotTask\tests\example.robot">
 <test id="s1-s1-t1" name="Screenshot and Log Test Case" line="6">
 <kw name="Take Screenshot and Log Text">
 <kw name="Take Screenshot" owner="Screenshot">
-<msg time="2025-03-13T11:37:17.541809" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
+<msg time="2025-03-13T17:22:07.581519" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
 Make sure tests are run with a physical or virtual display.</msg>
-<msg time="2025-03-13T11:37:17.542825" level="INFO" html="true">&lt;a href="screenshot_1.jpg"&gt;&lt;img src="screenshot_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-13T17:22:07.582512" level="INFO" html="true">&lt;a href="screenshot_1.jpg"&gt;&lt;img src="screenshot_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
-<status status="PASS" start="2025-03-13T11:37:17.541809" elapsed="0.001016"/>
+<status status="PASS" start="2025-03-13T17:22:07.580528" elapsed="0.001984"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-03-13T11:37:17.543800" level="INFO">The screenshot has taken by John</msg>
+<msg time="2025-03-13T17:22:07.582512" level="INFO">The screenshot has taken by John</msg>
 <arg>The screenshot has taken by ${Name}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-03-13T11:37:17.542825" elapsed="0.000975"/>
+<status status="PASS" start="2025-03-13T17:22:07.582512" elapsed="0.000000"/>
 </kw>
 <arg>${Name}</arg>
-<status status="PASS" start="2025-03-13T11:37:17.540809" elapsed="0.002991"/>
+<status status="PASS" start="2025-03-13T17:22:07.580528" elapsed="0.001984"/>
 </kw>
-<status status="PASS" start="2025-03-13T11:37:17.539801" elapsed="0.003999"/>
+<status status="PASS" start="2025-03-13T17:22:07.579534" elapsed="0.002978"/>
 </test>
-<status status="PASS" start="2025-03-13T11:37:17.532790" elapsed="0.012010"/>
+<status status="PASS" start="2025-03-13T17:22:07.573417" elapsed="0.010101"/>
 </suite>
-<status status="PASS" start="2025-03-13T11:37:17.514637" elapsed="0.031164"/>
+<suite id="s1-s2" name="Test Address Table" source="C:\Users\Оксана\PycharmProjects\robotTask\tests\test_address_table.robot">
+<test id="s1-s2-t1" name="Test Database Connection with Logging" line="5">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.603716" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.603716" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.605716" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.607833" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.607833" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.602733" elapsed="0.054227"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.602733" elapsed="0.054227"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Successfully connected to AdventureWorks2012 database.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.656960" elapsed="0.001002"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.657962" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT 1 AS TestResult;&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.657962" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.658962" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TestResult&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.658962" level="INFO">${query_result} = [(1,)]</msg>
+<var>${query_result}</var>
+<arg>SELECT 1 AS TestResult;</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.657962" elapsed="0.001000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${query_result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.658962" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.659962" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${query_result}[0][0]</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.658962" elapsed="0.001000"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.659962" elapsed="0.000000"/>
+</kw>
+<doc>Test the database connection with detailed logging.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.601710" elapsed="0.058252"/>
+</test>
+<test id="s1-s2-t2" name="Verify Record Count in Address Table" line="14">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.661961" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.661961" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.661961" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.663957" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.663957" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.660961" elapsed="0.002996"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.660961" elapsed="0.002996"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.664966" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(*) FROM [Person].[Address];&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.667959" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.668959" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;19614&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.668959" level="INFO">${query_result} = [(19614,)]</msg>
+<var>${query_result}</var>
+<arg>SELECT COUNT(*) FROM [Person].[Address];</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.664966" elapsed="0.003993"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.668959" level="INFO">[(19614,)]</msg>
+<arg>${query_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.668959" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.669959" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${query_result}[0][0]</arg>
+<arg>19614</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.669959" elapsed="0.000000"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.669959" elapsed="0.000000"/>
+</kw>
+<doc>Verify total record count in the Address table.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.660961" elapsed="0.009999"/>
+</test>
+<test id="s1-s2-t3" name="Verify Valid Postal Codes in Address Table" line="22">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.672051" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.672051" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.672051" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.674051" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.674051" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.672051" elapsed="0.003001"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.672051" elapsed="0.003001"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.675052" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(DISTINCT [PostalCode]) FROM [Person].[Address];&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.684196" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.684196" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;661&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.684196" level="INFO">${query_result} = [(661,)]</msg>
+<var>${query_result}</var>
+<arg>SELECT COUNT(DISTINCT [PostalCode]) FROM [Person].[Address];</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.675052" elapsed="0.009144"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.685196" level="INFO">[(661,)]</msg>
+<arg>${query_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.685196" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.685196" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${query_result}[0][0]</arg>
+<arg>661</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.685196" elapsed="0.000000"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.685196" elapsed="0.001001"/>
+</kw>
+<doc>Verify the count of distinct Postal Codes in the Address table.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.670960" elapsed="0.015237"/>
+</test>
+<status status="PASS" start="2025-03-13T17:22:07.584527" elapsed="0.102662"/>
+</suite>
+<suite id="s1-s3" name="Test Document Table" source="C:\Users\Оксана\PycharmProjects\robotTask\tests\test_document_table.robot">
+<test id="s1-s3-t1" name="Verify Document Summary Column Is Not Empty" line="7">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.692208" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.692322" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.692322" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.693333" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.694343" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.691190" elapsed="0.003153"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.691190" elapsed="0.003153"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.695334" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(*) FROM [Production].[Document] WHERE [FileExtension] IS NULL;&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.697337" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.698326" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.698326" level="INFO">${query_result} = [(0,)]</msg>
+<var>${query_result}</var>
+<arg>SELECT COUNT(*) FROM [Production].[Document] WHERE [FileExtension] IS NULL;</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.694343" elapsed="0.003983"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.698326" level="INFO">[(0,)]</msg>
+<arg>${query_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.698326" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.698326" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${query_result}[0][0]</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.698326" elapsed="0.000000"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.699336" elapsed="0.000000"/>
+</kw>
+<doc>Verify that the FileExtension column in the Document table is not empty (NULL).</doc>
+<status status="PASS" start="2025-03-13T17:22:07.691190" elapsed="0.008146"/>
+</test>
+<test id="s1-s3-t2" name="Verify Document Table Has More Than 1000 Records" line="16">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.701353" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.701353" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.701353" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.703343" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.703343" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.701353" elapsed="0.002975"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.701353" elapsed="0.002975"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.704328" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(*) FROM [Production].[Document];&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.705329" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.706325" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;13&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.706325" level="INFO">${query_result} = [(13,)]</msg>
+<var>${query_result}</var>
+<arg>SELECT COUNT(*) FROM [Production].[Document];</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.704328" elapsed="0.001997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.706325" level="INFO">[(13,)]</msg>
+<arg>${query_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.706325" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${query_result}[0][0] &gt; 10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.706325" elapsed="0.001010"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.707335" elapsed="0.000998"/>
+</kw>
+<doc>Verify that the total number of documents is greater than 10 in the Document table.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.700333" elapsed="0.008000"/>
+</test>
+<status status="PASS" start="2025-03-13T17:22:07.688187" elapsed="0.021148"/>
+</suite>
+<suite id="s1-s4" name="Test Unitmeasure Table" source="C:\Users\Оксана\PycharmProjects\robotTask\tests\test_unitmeasure_table.robot">
+<test id="s1-s4-t1" name="Verify Minimum ModifiedDate In UnitMeasure Table" line="7">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.714422" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.714422" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.714422" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.716432" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.716432" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.713330" elapsed="0.003102"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.713330" elapsed="0.003102"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.717444" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT MIN([ModifiedDate]) FROM [Production].[UnitMeasure];&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.719432" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.720430" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2008-04-30 00:00:00&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.720430" level="INFO">${query_result} = [(datetime.datetime(2008, 4, 30, 0, 0),)]</msg>
+<var>${query_result}</var>
+<arg>SELECT MIN([ModifiedDate]) FROM [Production].[UnitMeasure];</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.716432" elapsed="0.003998"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.720430" level="INFO">[(datetime.datetime(2008, 4, 30, 0, 0),)]</msg>
+<arg>${query_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.720430" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>'${query_result}[0][0]' &gt;= '2000-01-01'</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.720430" elapsed="0.001004"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.721434" elapsed="0.000000"/>
+</kw>
+<doc>Verify that the minimum date in ModifiedDate is valid (not NULL and within a reasonable range).</doc>
+<status status="PASS" start="2025-03-13T17:22:07.712350" elapsed="0.009084"/>
+</test>
+<test id="s1-s4-t2" name="Verify Unique Names Count In UnitMeasure Table" line="17">
+<kw name="My Custom Connect To Database" owner="database_config">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.723434" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-03-13T17:22:07.723434" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-03-13T17:22:07.723434" level="INFO">No ODBC driver specified</msg>
+<msg time="2025-03-13T17:22:07.725836" level="INFO">List of installed ODBC drivers: ['SQL Server', 'ODBC Driver 17 for SQL Server', 'Microsoft Access Driver (*.mdb, *.accdb)', 'Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)', 'Microsoft Access Text Driver (*.txt, *.csv)', 'Microsoft Access dBASE Driver (*.dbf, *.ndx, *.mdx)', 'ODBC Driver 18 for SQL Server']</msg>
+<msg time="2025-03-13T17:22:07.725836" level="INFO">Connect to DB using : pyodbc.connect("charset=utf8mb4;DRIVER=ODBC Driver 17 for SQL Server;SERVER=127.0.0.1,1433;DATABASE=AdventureWorks2012;UID=RobotTestUser1;PWD=***;;")</msg>
+<arg>pyodbc</arg>
+<arg>DRIVER=${DB_DRIVER};SERVER=${DB_HOST},${DB_PORT};DATABASE=${DB_NAME};UID=${DB_USER};PWD=${DB_PASSWORD};</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.723434" elapsed="0.002402"/>
+</kw>
+<doc>This keyword sets up the database connection.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.722447" elapsed="0.003389"/>
+</kw>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-03-13T17:22:07.726847" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(DISTINCT [Name]) FROM [Production].[UnitMeasure];&lt;/code&gt;</msg>
+<msg time="2025-03-13T17:22:07.727830" level="INFO">Commit the transaction</msg>
+<msg time="2025-03-13T17:22:07.727830" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;38&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-03-13T17:22:07.727830" level="INFO">${query_result} = [(38,)]</msg>
+<var>${query_result}</var>
+<arg>SELECT COUNT(DISTINCT [Name]) FROM [Production].[UnitMeasure];</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.726847" elapsed="0.000983"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.728842" level="INFO">[(38,)]</msg>
+<arg>${query_result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.728842" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-03-13T17:22:07.728842" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${query_result}[0][0]</arg>
+<arg>38</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.728842" elapsed="0.000000"/>
+</kw>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.728842" elapsed="0.000989"/>
+</kw>
+<doc>Verify the count of unique UnitMeasure names in the table.</doc>
+<status status="PASS" start="2025-03-13T17:22:07.722447" elapsed="0.007384"/>
+</test>
+<status status="PASS" start="2025-03-13T17:22:07.710328" elapsed="0.019503"/>
+</suite>
+<status status="PASS" start="2025-03-13T17:22:07.556303" elapsed="0.174544"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Tests" id="s1" pass="8" fail="0" skip="0">Tests</stat>
 <stat name="Example" id="s1-s1" pass="1" fail="0" skip="0">Tests.Example</stat>
+<stat name="Test Address Table" id="s1-s2" pass="3" fail="0" skip="0">Tests.Test Address Table</stat>
+<stat name="Test Document Table" id="s1-s3" pass="2" fail="0" skip="0">Tests.Test Document Table</stat>
+<stat name="Test Unitmeasure Table" id="s1-s4" pass="2" fail="0" skip="0">Tests.Test Unitmeasure Table</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-13T11:37:17.541809" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
+<msg time="2025-03-13T17:22:07.581519" level="WARN">Taking screenshot failed: Taking screenshots is not supported on this platform by default. See library documentation for details.
 Make sure tests are run with a physical or virtual display.</msg>
 </errors>
 </robot>
