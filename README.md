@@ -27,8 +27,22 @@ Test cases locates in folder `tests`
 
 ## Setup
 1. Configure the `resources/database_config.robot` file with your database connection details.
-2. Create the MSSQL login using the script in `resources/SQLQuery_createUser.sql`:
-
+2. - Create the MSSQL login using the script in `resources/SQLQuery_createUser.sql` Or 
+- creating new user in SSMS:
+go to Object Explorer -> Security -> Logins -> right button -> new login... -> create new Login with next credentials: 
+- Login name: RobotTestUser1
+- choose "sql server authentication"
+- default database -> AdventureWorks2012
+- -> press ok
+next go to AdventureWorks2012 db -> security -> Users -> right button -> new user... -> create new User with next credentials: 
+general 
+- User name: RobotTestUser1
+- Login name: RobotTestUser1
+- default schema: dbo
+membership:
+- database role membership: db_datareader
+- -> press ok
+3. To check connection - run the file `resources/testConnection.py`
 
 ## Running Tests
 Run the tests with:
