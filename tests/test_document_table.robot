@@ -13,7 +13,7 @@ Verify Document Summary Column Is Not Empty
     Disconnect From Database
 
 # Test Case 2: Validate Total Records in the Document Table
-Verify Document Table Has More Than 1000 Records
+Verify Document Table Has More Than 10 Records
     [Documentation]  Verify that the total number of documents is greater than 10 in the Document table.
     My Custom Connect To Database
     ${query_result} =  Query   SELECT COUNT(*) FROM [Production].[Document];
