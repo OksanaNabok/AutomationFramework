@@ -3,7 +3,7 @@ Library    DatabaseLibrary
 
 *** Variables ***
 ${DB_NAME}         AdventureWorks2012           # Database name
-${DB_HOST}         127.0.0.1                    # Host (can be a remote IP, domain, or hostname)
+${DB_HOST}         127.0.0.1                    # Host (can be 127.0.0.1 or localhost)
 ${DB_USER}         RobotTestUser1               # SQL username
 ${DB_PASSWORD}     testPass                     # SQL password
 ${DB_PORT}         1433                         # Default SQL Server port
