@@ -19,7 +19,7 @@ Verify Record Count in Address Table
     Should Be Equal As Numbers   ${query_result}[0][0]   19614  # Replace 500 with your expected value
     Disconnect From Database
 
-Verify Valid Postal Codes in Address Table
+Verify Record Count of Postal Codes in Address Table
     [Documentation]  Verify the count of distinct Postal Codes in the Address table.
     My Custom Connect To Database
     ${query_result}=  Query  SELECT COUNT(DISTINCT [PostalCode]) FROM [Person].[Address];
