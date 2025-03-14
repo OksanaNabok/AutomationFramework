@@ -3,8 +3,8 @@ Resource    ../resources/database_config.robot
 
 *** Test Cases ***
 
-# Test Case 1: Verify DocumentSummary Column is Never Empty
-Verify Document Summary Column Is Not Empty
+# Test Case 1: Verify FileExtension Column is Never Empty
+Verify FileExtension Column Is Not Empty
     [Documentation]  Verify that the FileExtension column in the Document table is not empty (NULL).
     My Custom Connect To Database
     ${query_result} =  Query   SELECT COUNT(*) FROM [Production].[Document] WHERE [FileExtension] IS NULL;
